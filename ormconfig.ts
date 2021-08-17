@@ -12,7 +12,7 @@ const config: TypeOrmModuleOptions = {
   password: process.env.PASSWORD,
   database: process.env.DATABASE,
   entities: [Schedule],
-  synchronize: false,
+  synchronize: false, // DB 삭제후 실행시 true 설정
 };
 
 module.exports = config;

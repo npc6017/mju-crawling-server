@@ -1,4 +1,11 @@
-import { Body, Controller, Post, Headers, UnauthorizedException } from "@nestjs/common";
+import {
+  Body,
+  Controller,
+  Post,
+  Headers,
+  UnauthorizedException,
+  Get,
+} from '@nestjs/common';
 import { AppService } from './app.service';
 import { RequestScheduleDto } from './dto/request.schedule.dto';
 
@@ -17,5 +24,15 @@ export class AppController {
     if (!checked) throw new UnauthorizedException();
     /** Insert crawling data */
     await this.appService.setCrawlingData(schedules);
+  }
+
+  /** Get schedule crawling data */
+  @Get('/schedule')
+  async getSchedule(
+    @Headers('key') key: string,
+  ): Promise<RequestScheduleDto[]> {
+    const checked = await this.appService.checkCrawler(key);
+    if (!checked) throw new UnauthorizedException();
+    return await this.appService.getCrawlingData();
   }
 }
