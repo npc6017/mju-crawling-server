@@ -11,4 +11,10 @@ export class Schedule {
 
   @Column('character varying', { name: 'content', unique: false })
   content: string;
+
+  @Column('integer', { name: 'month', unique: false })
+  month: number;
+
+  @Column('integer', { name: 'year', unique: false })
+  year: number;
 }
