@@ -20,7 +20,7 @@ npm install
 
 
 ### ENV 설정
-grigo-back-end-node 디렉토리에 .env파일을 생성한다.
+mju-crawling-server 디렉토리에 .env파일을 생성한다.
 ```
 SECRETKEY=
 HOST=
