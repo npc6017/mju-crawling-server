@@ -1,3 +1,49 @@
+# 실행 방법
+
+### PM2 프로세스 관리자 설정
+pm2 설치
+```
+sudo npm install pm2 -g
+```
+pm2를 사용하면 모니터링이 가능하며,  
+프로세스가 중단되어도 자동으로 재실행 한다.
+
+추가적인 pm2 기능 보기
+```
+pm2 examples
+```
+
+### 패키지 설치
+```
+npm install
+```
+
+
+### ENV 설정
+grigo-back-end-node 디렉토리에 .env파일을 생성한다.
+```
+SECRETKEY=
+HOST=
+USERNAME=
+PASSWORD=
+DATABASE=
+PORT=
+```
+secrectkey: 클라이언트 인증 키, 오타 수정 예정..  
+host: 호스트 주소  
+username: DataBase 사용자  
+password: DataBase 비밀번호  
+database: DataBase 이름
+port: 실행 포트
+
+### 실행
+**백그라운드에서 실행**
+```
+pm2 start ./dist/src/main.js
+// 이름 설정하여 실행하고 싶은 경우
+pm2 start ./dist/src/main.js --name crawling
+```
+
 # Rest API 개발 문서
 ```typescript
 baseURL: http://localhost:****/api
@@ -11,7 +57,7 @@ Header: {
 }
 ```
 ### Response
-```typescript
+```
 [
     {
         "id": 1,
