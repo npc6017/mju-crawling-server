@@ -22,7 +22,7 @@ npm install
 ### ENV 설정
 mju-crawling-server 디렉토리에 .env파일을 생성한다.
 ```
-SECRETKEY=
+SECRECTKEY=
 HOST=
 USERNAME=
 PASSWORD=
