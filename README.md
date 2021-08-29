@@ -53,7 +53,7 @@ baseURL: http://localhost:****/api
 ### Request
 ```typescript
 Header: {
-  key: SECRETKEY
+  key: 해시된 토큰 값 발급
 }
 ```
 ### Response
